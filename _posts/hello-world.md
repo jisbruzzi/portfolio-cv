@@ -1,19 +1,35 @@
 ---
-title: 'Learn How to Pre-render Pages Using Static Generation with Next.js'
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
-coverImage: '/assets/blog/hello-world/cover.jpg'
-date: '2020-03-16T05:35:07.322Z'
-author:
-  name: Tim Neutkens
-  picture: '/assets/blog/authors/tim.jpeg'
-ogImage:
-  url: '/assets/blog/hello-world/cover.jpg'
+title: Un cuaderno con ideas
+excerpt: 'Qué tiene este blog'
+date: '2021-02-16T21:14:49.258Z'
 ---
+Desde que renuncié estoy aprendiendo muchas cosas en lo profesional, tantas que estoy necesitando tener algún lugar donde escribirlas para:
+- Acordarme que las aprendí
+- Poder referir a las personas acá cuando tengo que pasarles cierta información
+- Agrupar links
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+Hace algún tiempo junto cosas escritas en cuadernos y archivos markdown que dan vueltas por diversos repositorios. Lo que no tengo es *Autoridad* para decir cosas. Lo que voy a subir acá va a ser más bien una síntesis de mis aprendizajes.
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+Planeo cubrir:
+- Temas 100% técnicos y prácticos ("guías" o "tutoriales")
+  - Desarrollo web
+  - Ricing y linux
+- Resúmenes de cosas que leo o aprendo
+- Vivencias profesionales
+- Cosas que necesito subir a algún lugar y no sé dónde
 
-## Lorem Ipsum
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+Este sitio va a ser una combinación de blog y wiki. Los posts:
+- Le tienen que servir en mayor medida al lector que a mí
+- Van a ser cortos
+
+Planeo orientar este blog a tags, de esta manera cada tag tendría su propio propósito. Además tengo previsto hacer algunos posts en inglés y/o traducir algunos. Voy a poner un *modo limpio*.
+
+Tareas pendientes:
+- [ ] Traer 2 ó 3 posts.
+- [ ] Mejorar estilos (css)
+- [ ] Sistema híbrido que evita la necesidad de abrir el post si es corto/no tiene excerpt
+- [ ] Página de tag
+- [ ] Modo "limpio" que remueve links de navegación y simplifica la interfaz (para clientes, etc)
+- [ ] Múltiples idiomas
+- [ ] Página personal/cv
