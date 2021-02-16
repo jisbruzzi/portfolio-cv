@@ -27,7 +27,7 @@ Planeo orientar este blog a tags, de esta manera cada tag tendría su propio pro
 
 Tareas pendientes:
 - [ ] Traer 2 ó 3 posts.
-- [ ] Mejorar estilos (css)
+- [ ] Mejorar estilos (css), eliminar tailwind
 - [ ] Sistema híbrido que evita la necesidad de abrir el post si es corto/no tiene excerpt
 - [ ] Página de tag
 - [ ] Modo "limpio" que remueve links de navegación y simplifica la interfaz (para clientes, etc)
