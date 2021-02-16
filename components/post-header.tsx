@@ -1,23 +1,22 @@
 import DateFormatter from './date-formatter'
-import PostTitle from './post-title'
 import Author from '../types/author'
 
 type Props = {
   title: string
-  coverImage: string
-  date: string
-  author: Author
+  date?: string
 }
 
-const PostHeader = ({ title, coverImage, date, author }: Props) => {
+const PostHeader = ({ title, date }: Props) => {
   return (
     <>
-      <PostTitle>{title}</PostTitle>
-      <div className="max-w-2xl mx-auto">
+      <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">
+        {title}
+      </h1>
+      {date&&<div className="max-w-2xl mx-auto">
         <div className="mb-6 text-lg">
           <DateFormatter dateString={date} />
         </div>
-      </div>
+      </div>}
     </>
   )
 }

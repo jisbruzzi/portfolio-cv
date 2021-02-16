@@ -4,19 +4,15 @@ import Author from '../types/author'
 
 type Props = {
   title: string
-  coverImage: string
-  date: string
-  excerpt: string
-  author: Author
+  date?: string
+  excerpt?: string
   slug: string
 }
 
 const PostPreview = ({
   title,
-  coverImage,
   date,
   excerpt,
-  author,
   slug,
 }: Props) => {
   return (
@@ -26,10 +22,10 @@ const PostPreview = ({
           <a className="hover:underline">{title}</a>
         </Link>
       </h3>
-      <div className="text-lg mb-4">
+      {date && <div className="text-lg mb-4">
         <DateFormatter dateString={date} />
-      </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+      </div>}
+      {excerpt && <p className="text-lg leading-relaxed mb-4">{excerpt}</p>}
     </div>
   )
 }
