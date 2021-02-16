@@ -1,5 +1,3 @@
-import Container from '../components/container'
-import MoreStories from '../components/more-stories'
 import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
@@ -17,7 +15,6 @@ const Index = ({ allPosts }: Props) => {
         <Head>
           <title>Un cuaderno con ideas</title>
         </Head>
-        <Container>
         <section>
           <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
             {allPosts.map((post) => (
@@ -33,7 +30,6 @@ const Index = ({ allPosts }: Props) => {
             ))}
           </div>
         </section>
-        </Container>
       </Layout>
     </>
   )
