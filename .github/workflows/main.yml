@@ -36,6 +36,10 @@ jobs:
       # Runs a single command using the runners shell
       - name: export
         run: yarn run next export
+      
+      # Runs a single command using the runners shell
+      - name: nojekyll
+        run: touch out/.nojekyll
         
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@master
