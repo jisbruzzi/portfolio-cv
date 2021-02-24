@@ -8,7 +8,7 @@ Viví situaciones comunicativas muy distintas a lo largo de mi vida:
 - Durante varios años fui a misionar con [jornadas](https://mvg.com.ar) a Lavalle, Corrientes. En esta situación es necesario transmitir conceptos importantes en un lenguaje muy distinto, y en muy poco tiempo.
 - Trabajé escasísimos 2 años y medio en empresas de software.
 
-Esto es lo que aprendí.
+Esto es lo que aprendí. Nótese que en este post no cito bibliografía.
 
 # 1. Las palabras se pagan
 Las palabras son caras en muchos sentidos. Las paga el que las escribe y el que las lee; el que las escucha y el que las dice. Hay que elegirlas bien para minimizar su cantidad y maximizar la efectividad del mensaje. Es conveniente repensar un mensaje de chat o mail para asegurarnos de que el texto escrito realmente transmite información.
