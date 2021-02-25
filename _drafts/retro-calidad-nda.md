@@ -4,4 +4,4 @@
 3. Etapa post-lanzamiento, github actions + cypress crítica (+ app + portal)
 4. Freno a la producción, pasaje a gitlab + datacenter casero con paralelismo + docker
 5. Freno a la  producción, pasaje a gitlab + dc casero + paralelismo + sqlite + develop.sh
-
+6. monitoreo
