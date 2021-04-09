@@ -8,6 +8,8 @@
 
 /* Write you own custom component styles here */
 
+@import url('https://fonts.googleapis.com/css?family=Sanchez|Merriweather|Montserrat');
+
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */

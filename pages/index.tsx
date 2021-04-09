@@ -21,7 +21,7 @@ function PhotoAndInformation({data}:{data:{[key:string]:any}}){
       text-4xl
       w-2/3
       rounded-full
-
+      font-montserrat
       ">
         {data.name}
       </div>
