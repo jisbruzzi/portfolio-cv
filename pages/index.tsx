@@ -23,7 +23,7 @@ function PhotoAndInformation({data}:{data:{[key:string]:any}}){
       rounded-full
       font-montserrat
       text-center
-      pb-8
+      my-4
       font-bold
       ">
         {data.name}
@@ -36,10 +36,12 @@ function PhotoAndInformation({data}:{data:{[key:string]:any}}){
         className="
         rounded-full
         w-2/3
+        max-w-xs
         border-blue-100
         border-solid
         border-4
         shadow
+        my-4
         "
         src={data.photo}
         />
@@ -52,10 +54,9 @@ function PhotoAndInformation({data}:{data:{[key:string]:any}}){
       rounded-full
       font-montserrat
       text-center
-      pb-8
       font-bold
       text-xl
-      pt-8
+      my-4
       ">
         {data.caption}
       </div>
@@ -69,7 +70,8 @@ function Curriculum({person}:{person:GrayMatterFile<string>}){
     bg-blue-900
     lg:w-1/3
     rounded-xl
-    m-4
+    m-8
+    p-4
     shadow-xl
     relative
     ">
@@ -92,20 +94,19 @@ export default function Homepage(props:HomeProps){
 }
 
 export async function getStaticProps():Promise<{props:HomeProps}> {
-    async function htmlPart(name:string):Promise<GrayMatterFile<string>>{
-      const post = getBySlug(name)
-      const content = await markdownToHtml(post.content || '')
-      return {
-        ...post,
-        content,
-        orig:""
-      }
-    }
-    
-  
+  async function htmlPart(name:string):Promise<GrayMatterFile<string>>{
+    const post = getBySlug(name)
+    const content = await markdownToHtml(post.content || '')
     return {
-      props: {
-        jose:(await htmlPart("jose"))
-      },
+      ...post,
+      content,
+      orig:""
     }
   }
+
+  return {
+    props: {
+      jose:(await htmlPart("jose"))
+    },
+  }
+}
