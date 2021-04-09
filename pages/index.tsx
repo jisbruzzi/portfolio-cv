@@ -9,6 +9,13 @@ interface HomeProps {
   jose: GrayMatterFile<string>
 }
 
+function DarkBlock({ text }: { text: GrayMatterFile<string> }){
+  return <div 
+    className="bg-blue-900 text-white prose prose-white max-w-none"
+    dangerouslySetInnerHTML={{ __html: text.content }}>
+  </div>
+}
+
 function Curriculum({ person }: { person: GrayMatterFile<string> }) {
   return <div className="flex lg:flex-row flex-col align-middle">
     <div className="
@@ -29,7 +36,7 @@ function Curriculum({ person }: { person: GrayMatterFile<string> }) {
     <div className="lg:w-2/3 lg:m-8 m-4">
       <Hero data={person.data} />
       <div
-      className="prose mx-auto my-8"
+      className="prose mx-auto my-8 prose-compact prose-weaker"
       dangerouslySetInnerHTML={{ __html: person.content }}
       />
     </div>
@@ -39,7 +46,7 @@ export default function Homepage(props: HomeProps) {
   console.log(props)
   return <div className="container mx-auto">
     <Curriculum person={props.jose} />
-    
+    <DarkBlock text={props.jose}/>
   </div>
 }
 

@@ -12,7 +12,30 @@ module.exports = {
         sanchez:['Sanchez', ...defaultTheme.fontFamily.serif],
         merriweather:['Merriweather', ...defaultTheme.fontFamily.serif],
         montserrat:['Montserrat', ...defaultTheme.fontFamily.sans],
-      }
+      },
+      typography: (theme)=>({
+        white: {
+          css: {
+            color: '#FFFFFF',
+            'strong, h1, h2, h3, h4, h5': { color: '#FFFFFF' },
+          },
+        },
+        compact: {
+          css: {
+            'p, li, h1, h2, h3, h4, h5': { marginBottom:"0.2em", marginTop: "0.4em" },
+            h1: { fontSize:"1.5em"},
+            h2: { fontSize:"1.25em", marginLeft:"1rem"},
+            li: { marginLeft:"2rem"},
+            p: { marginLeft:"2rem"},
+
+          },
+        },
+        weaker: {
+          css: {
+            'strong, h1, h2, h3, h4, h5': { color: theme('colors.gray.600', defaultTheme.colors.gray[600]) },
+          },
+        },
+      }),
     },
     
   },
