@@ -6,7 +6,6 @@ export default function PhotoAndInformation({ data }: { data: { [key: string]: a
     justify-items-center
     items-center
     justify-center
-    h-full
     p-4
     ">
     {
