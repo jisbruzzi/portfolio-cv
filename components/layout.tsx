@@ -13,7 +13,7 @@ const Layout = ({ preview, children }: Props) => {
       <Meta />
       
       <div className="min-h-screen mx-auto max-w-screen-sm mt-12">
-        <Link href="/">
+        <Link href="/posts">
           <h1 className="hover:underline text-4xl font-black font-mono">Un cuaderno con ideas</h1>
         </Link>
         <p className="font-black font-mono">El blog de José Ignacio Sbruzzi</p>

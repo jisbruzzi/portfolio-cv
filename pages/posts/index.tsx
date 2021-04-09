@@ -1,9 +1,8 @@
-import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
+import Layout from '../../components/layout'
+import { getAllPosts } from '../../lib/api'
 import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
-import Post from '../types/post'
-import PostPreview from '../components/post-preview'
+import Post from '../../types/post'
+import PostPreview from '../../components/post-preview'
 type Props = {
   allPosts: Post[]
 }
