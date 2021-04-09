@@ -1,5 +1,6 @@
 import type { GrayMatterFile } from "gray-matter"
 import React from "react"
+import Hero from "../components/landing/Hero"
 import PhotoAndInformation from "../components/landing/PhotoAndInformation"
 import { getBySlug } from "../lib/landingParts"
 import markdownToHtml from "../lib/markdownToHtml"
@@ -20,36 +21,13 @@ function Curriculum({ person }: { person: GrayMatterFile<string> }) {
       rounded-xl
       shadow-xl
       lg:min-h-almost-screen
+      sticky top-8
       ">
         <PhotoAndInformation data={person.data} />
       </div>
     </div>
     <div className="lg:w-2/3 lg:m-8 m-4">
-      <div className="m-auto lg:min-h-almost-screen flex flex-col justify-center px-4">
-        <div className="m-auto">
-          <div className="text-6xl font-montserrat text-left font-bold">
-            {person.data.title}
-          </div>
-          <div className="text-xl font-montserrat text-left">
-            {person.data.subtitle}
-          </div>
-        
-          <button className="
-          bg-blue-900
-          rounded-md
-          shadow
-          font-sans
-          px-4
-          py-2
-          my-4
-          text-white
-          font-bold
-          hover:bg-blue-800
-          ">
-            Let's talk
-          </button>
-        </div>
-      </div>
+      <Hero data={person.data} />
       <div
       className="prose mx-auto my-8"
       dangerouslySetInnerHTML={{ __html: person.content }}
