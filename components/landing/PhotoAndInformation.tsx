@@ -2,7 +2,8 @@ export default function PhotoAndInformation({ data }: { data: { [key: string]: a
   return <div className="
     m-auto
     flex
-    flex-col
+    lg:flex-col
+    flex-row
     justify-items-center
     items-center
     justify-center
@@ -11,11 +12,12 @@ export default function PhotoAndInformation({ data }: { data: { [key: string]: a
     {
       data.name && <div className="
         text-white
-        text-6xl
+        lg:text-6xl
+        text-3xl
         rounded-full
         font-montserrat
         text-center
-        m-4
+        lg:m-4
         font-bold
         ">
         {data.name}
@@ -27,7 +29,8 @@ export default function PhotoAndInformation({ data }: { data: { [key: string]: a
       <img
         className="
           rounded-full
-          w-2/3
+          lg:w-2/3
+          w-1/2
           max-w-xs
           border-blue-100
           border-solid

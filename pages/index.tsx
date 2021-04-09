@@ -9,10 +9,11 @@ interface HomeProps {
 }
 
 function Curriculum({ person }: { person: GrayMatterFile<string> }) {
-  return <div className="flex lg:flex-row flex-col-reverse align-middle">
+  return <div className="flex lg:flex-row flex-col align-middle">
     <div className="
     lg:w-1/3
-    m-8
+    lg:m-8
+    m-4
     ">
       <div className="
       bg-blue-900
@@ -23,8 +24,8 @@ function Curriculum({ person }: { person: GrayMatterFile<string> }) {
         <PhotoAndInformation data={person.data} />
       </div>
     </div>
-    <div className="lg:w-2/3">
-      <div className="m-auto lg:min-h-almost-screen my-16 flex flex-col justify-center">
+    <div className="lg:w-2/3 lg:m-8 m-4">
+      <div className="m-auto lg:min-h-almost-screen flex flex-col justify-center px-4">
         <div className="m-auto">
           <div className="text-6xl font-montserrat text-left font-bold">
             {person.data.title}
@@ -40,7 +41,7 @@ function Curriculum({ person }: { person: GrayMatterFile<string> }) {
           font-sans
           px-4
           py-2
-          m-4
+          my-4
           text-white
           font-bold
           hover:bg-blue-800
