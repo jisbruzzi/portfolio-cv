@@ -13,6 +13,7 @@ Si tu intención es hacer dinero, lo ideal es aprender a hacer páginas web (tam
 - HTML
 - CSS
 - Javascript
+
 De estos 3 componentes, sólo javascript es un lenguaje de programación. Sabiendo muy poco javascript se puede hacer desarrollo web. De hecho, sabiendo relativamente poco de las 3 cosas uno ya puede trabajar para el exterior o en una empresa local.
 
 Si tu intención es aprender a programar para ver si te gusta una carrera, lo ideal es aprender python, que se usa en cursos introductorios en muchas universidades. Otra ventaja de python es que se puede usar para muchísimos proyectos "hobbie": videojuegos, edición de imágenes, análisis de datos, inteligencia artificial, IOT, automatizaciones de lo más diverso, etc. Una vez explorado python podés pasar a aprender un lenguaje con tipos (recomiendo C#), o un lenguaje funcional de la família de lisp (recomiendo scheme).

@@ -23,12 +23,11 @@ const Post = ({ post, morePosts, preview }: Props) => {
   }
   return (
     <Layout preview={preview}>
-        <Header />
         {router.isFallback ? (
           <h1>Loading...</h1>
         ) : (
           <>
-            <article className="mb-32">
+            <article className="mb-32 prose px-2 text-justify max-w-7xl font-serif">
               <Head>
                 <title>
                   {post.title} | Un cuaderno con ideas
