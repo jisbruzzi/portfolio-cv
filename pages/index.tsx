@@ -9,7 +9,7 @@ interface HomeProps {
 }
 
 function Curriculum({ person }: { person: GrayMatterFile<string> }) {
-  return <div className="flex lg:flex-row flex-col">
+  return <div className="flex lg:flex-row flex-col-reverse align-middle">
     <div className="
     lg:w-1/3
     m-8
@@ -23,15 +23,32 @@ function Curriculum({ person }: { person: GrayMatterFile<string> }) {
         <PhotoAndInformation data={person.data} />
       </div>
     </div>
-    <div className="
-    mx-auto 
-    ">
-      <div className="py-20">
-        <div className="text-6xl font-montserrat text-left font-bold">
-          Software engineer<br/> for hire
+    <div className="lg:w-2/3">
+      <div className="m-auto lg:min-h-almost-screen my-16 flex flex-col justify-center">
+        <div className="m-auto">
+          <div className="text-6xl font-montserrat text-left font-bold">
+            {person.data.title}
+          </div>
+          <div className="text-xl font-montserrat text-left">
+            {person.data.subtitle}
+          </div>
+        
+          <button className="
+          bg-blue-900
+          rounded-md
+          shadow
+          font-sans
+          px-4
+          py-2
+          m-4
+          text-white
+          font-bold
+          hover:bg-blue-800
+          ">
+            Let's talk
+          </button>
         </div>
       </div>
-      
       <div
       className="prose mx-auto my-8"
       dangerouslySetInnerHTML={{ __html: person.content }}
@@ -43,6 +60,7 @@ export default function Homepage(props: HomeProps) {
   console.log(props)
   return <div className="container mx-auto">
     <Curriculum person={props.jose} />
+    
   </div>
 }
 

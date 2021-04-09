@@ -1,7 +1,8 @@
 ---
 name: José Ignacio Sbruzzi
 photo: 'https://jisbruzzi.github.io/cv/fotocv.png'
-caption: Software engineer
+title: Software engineer
+subtitle: Looking for work
 ---
 # Location
 Buenos Aires, Argentina, GMT-3

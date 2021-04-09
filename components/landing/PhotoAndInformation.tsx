@@ -38,20 +38,5 @@ export default function PhotoAndInformation({ data }: { data: { [key: string]: a
         src={data.photo}
       />
     }
-
-    {
-      data.caption && <div className="
-        text-white
-        rounded-full
-        font-montserrat
-        text-center
-        font-bold
-        text-xl
-        my-4
-        ">
-        {data.caption}
-      </div>
-    }
-
   </div>
 }
