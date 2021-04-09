@@ -16,12 +16,15 @@ function PhotoAndInformation({data}:{data:{[key:string]:any}}){
   h-full
   ">
     {
-      <div className="
+      data.name && <div className="
       text-white
-      text-4xl
+      text-6xl
       w-2/3
       rounded-full
       font-montserrat
+      text-center
+      pb-8
+      font-bold
       ">
         {data.name}
       </div>
@@ -33,18 +36,42 @@ function PhotoAndInformation({data}:{data:{[key:string]:any}}){
         className="
         rounded-full
         w-2/3
+        border-blue-100
+        border-solid
+        border-4
+        shadow
         "
         src={data.photo}
         />
-      
     }
+
+    {
+      data.caption && <div className="
+      text-white
+      w-2/3
+      rounded-full
+      font-montserrat
+      text-center
+      pb-8
+      font-bold
+      text-xl
+      pt-8
+      ">
+        {data.caption}
+      </div>
+    }
+    
   </div>
 }
 function Curriculum({person}:{person:GrayMatterFile<string>}){
-  return <div className="flex lg:flex-row flex-col lg:h-almost-screen">
+  return <div className="flex lg:flex-row flex-col lg:min-h-almost-screen">
     <div className="
     bg-blue-900
     lg:w-1/3
+    rounded-xl
+    m-4
+    shadow-xl
+    relative
     ">
       <PhotoAndInformation data={person.data}/>
     </div>
@@ -59,7 +86,9 @@ function Curriculum({person}:{person:GrayMatterFile<string>}){
 }
 export default function Homepage(props:HomeProps){
   console.log(props)
-  return <Curriculum person={props.jose}/>
+  return <div className="container mx-auto">
+    <Curriculum person={props.jose}/>
+  </div>
 }
 
 export async function getStaticProps():Promise<{props:HomeProps}> {

@@ -5,8 +5,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      height:{
-        "almost-screen":"80vh"
+      minHeight:{
+        "almost-screen":"60vh"
       },
       fontFamily:{
         sanchez:['Sanchez', ...defaultTheme.fontFamily.serif],
