@@ -17,7 +17,8 @@ module.exports = {
         white: {
           css: {
             color: '#FFFFFF',
-            'strong, h1, h2, h3, h4, h5': { color: '#FFFFFF' },
+            'strong, h1, h2, h3, h4, h5': { color: theme('colors.white', defaultTheme.colors.white) },
+            'a': { color: theme('colors.gray.100', defaultTheme.colors.gray[100]) },
           },
         },
         compact: {

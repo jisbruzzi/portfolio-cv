@@ -30,13 +30,13 @@ export default function PhotoAndInformation({ data }: { data: { [key: string]: a
         className="
           rounded-full
           lg:w-2/3
-          w-1/2
+          w-1/3
           max-w-xs
           border-blue-100
           border-solid
           border-4
           shadow
-          my-4
+          m-4
           "
         src={data.photo}
       />
