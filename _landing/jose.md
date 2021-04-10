@@ -4,13 +4,13 @@ photo: 'https://jisbruzzi.github.io/cv/fotocv.png'
 title: Software engineer
 subtitle: Looking for work
 ---
-# Location 🗺️
+# Location
 Buenos Aires, Argentina, GMT-3
 
-# Languages 🌐
+# Languages
 Spanish, Portuguese, English
 
-# Education 🎓
+# Education
 ## UBA: Information Systems Engineering (2014-now)
 - Specialization: **management**. Includes topics such as software engineering, project management and software development process methodologies
 - **GPA: 8.50**
