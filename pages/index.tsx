@@ -1,27 +1,34 @@
 import type { GrayMatterFile } from "gray-matter"
-import React from "react"
+import React, { PropsWithChildren } from "react"
 import ContentContainer from "../components/landing/ContentContainer"
 import Hero from "../components/landing/Hero"
 import PhotoAndInformation from "../components/landing/PhotoAndInformation"
-import { getBySlug } from "../lib/landingParts"
+import { getBySlug, getPortfolioItems } from "../lib/landingParts"
 import markdownToHtml from "../lib/markdownToHtml"
+
+function SectionTitle(props:PropsWithChildren<{}>){
+  return <h1 className="
+  text-center text-4xl 
+  font-montserrat m-4 font-extrabold 
+  ">
+    {props.children}
+  </h1>
+}
 
 function DarkBlock({ text }: { text: GrayMatterFile<string> }) {
   return <div
-    className="bg-blue-900">
+    className="bg-blue-900 text-white">
     <ContentContainer>
       {
         text.data.title &&
-        <h1 className="
-        text-white text-center text-4xl 
-        font-montserrat m-4 font-extrabold 
-        filter drop-shadow-strong
-        ">
-          {text.data.title}
-        </h1>
+        <SectionTitle>
+          <span className="filter drop-shadow-strong">
+            {text.data.title}
+          </span>
+        </SectionTitle>
       }
       <div 
-        className="text-white prose prose-white prose-compact max-w-none"
+        className="prose prose-white prose-compact max-w-none"
         dangerouslySetInnerHTML={{ __html: text.content }} 
       />
     </ContentContainer>
@@ -31,6 +38,7 @@ function DarkBlock({ text }: { text: GrayMatterFile<string> }) {
 interface HomeProps {
   jose: GrayMatterFile<string>,
   experience: GrayMatterFile<string>,
+  portfolio: GrayMatterFile<string>[]
 }
 
 function Curriculum({ person }: { person: GrayMatterFile<string> }) {
@@ -61,11 +69,25 @@ function Curriculum({ person }: { person: GrayMatterFile<string> }) {
   </div>
   </div>
 }
+
+function PortfolioItem({ information }: { information: GrayMatterFile<string> }){
+  return <h1>{information.data.title}</h1>
+}
+
+function Portfolio(props:{portfolioItems:GrayMatterFile<string>[]}){
+  return <div className="bg-blue-50">
+    <ContentContainer>
+      <SectionTitle> Portfolio </SectionTitle>
+    </ContentContainer>
+    {props.portfolioItems.map(item=><PortfolioItem information={item}/>)}
+  </div>
+}
 export default function Homepage(props: HomeProps) {
   console.log(props)
   return <>
     <Curriculum person={props.jose} />
     <DarkBlock text={props.experience}/>
+    <Portfolio portfolioItems={props.portfolio}/>
   </>
 }
 
@@ -82,8 +104,9 @@ export async function getStaticProps(): Promise<{ props: HomeProps }> {
 
   return {
     props: {
-      jose: (await htmlPart("jose")),
-      experience: (await htmlPart("experience")),
+      jose: (await htmlPart("jose.md")),
+      experience: (await htmlPart("experience.md")),
+      portfolio: await Promise.all(getPortfolioItems().map(name=>htmlPart(`portfolio/${name}`)))
     },
   }
 }
