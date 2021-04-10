@@ -71,7 +71,11 @@ function Curriculum({ person }: { person: GrayMatterFile<string> }) {
 }
 
 function PortfolioItem({ information }: { information: GrayMatterFile<string> }){
-  return <h1>{information.data.title}</h1>
+  return <div className="my-8">
+    <Card>
+      {information.data.title}
+    </Card>
+  </div>
 }
 
 function Portfolio(props:{portfolioItems:GrayMatterFile<string>[]}){
