@@ -1,5 +1,5 @@
 import { GrayMatterFile } from "gray-matter";
-import React from "react";
+import React, { useReducer } from "react";
 import Button from "./Button";
 import Card from "./Card";
 function ChevronDown(){
@@ -7,14 +7,22 @@ function ChevronDown(){
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
   </svg>
 }
-function ReadMore(){
-  return <Button>
+function ReadMore(props:any){
+  return <Button {...props}>
     <div className="flex flex-row">
-      <div>More</div> <div className="pl-4"><ChevronDown/></div>
+      <div className="pr-4">More</div> 
+      <div className={`
+      transition-transform
+      transform
+      ${props.open?'rotate-180':'rotate-0'}
+      `}>
+        <ChevronDown/>
+      </div>
     </div>
   </Button>
 }
 export default function PortfolioItem({ information }: { information: GrayMatterFile<string> }) {
+  const [open,alternateOpen] = useReducer((s:boolean)=>!s,false);
   return <div className="my-8">
     <Card>
       <div className="p-4 relative">
@@ -47,11 +55,18 @@ export default function PortfolioItem({ information }: { information: GrayMatter
               <a className="hover:underline text-sm text-blue-900" href={information.data.website}>website</a>
               <div dangerouslySetInnerHTML={{ __html: information.data.excerpt }} />
               <div className="absolute right-2 bottom-2">
-                <ReadMore/>
+                <ReadMore open={open} onClick={alternateOpen}/>
               </div>
             </div>
           }
         </div>
+      </div>
+      <div className={`
+      transition-height
+      overflow-hidden
+      ${open?"":"h-0"}
+      `}>
+        <div className="prose" dangerouslySetInnerHTML={{ __html: information.content }} />
       </div>
     </Card>
   </div>
