@@ -1,12 +1,24 @@
 import { GrayMatterFile } from "gray-matter";
 import React from "react";
+import Button from "./Button";
 import Card from "./Card";
-
+function ChevronDown(){
+  return <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+  </svg>
+}
+function ReadMore(){
+  return <Button>
+    <div className="flex flex-row">
+      <div>More</div> <div className="pl-4"><ChevronDown/></div>
+    </div>
+  </Button>
+}
 export default function PortfolioItem({ information }: { information: GrayMatterFile<string> }) {
   return <div className="my-8">
     <Card>
-      <div className="p-4">
-        <div className="flex flex-row h-36">
+      <div className="p-4 relative">
+        <div className="flex flex-row h-40">
           {
             information.data.cover && <>
               <img
@@ -34,6 +46,9 @@ export default function PortfolioItem({ information }: { information: GrayMatter
               </h1>
               <a className="hover:underline text-sm text-blue-900" href={information.data.website}>website</a>
               <div dangerouslySetInnerHTML={{ __html: information.data.excerpt }} />
+              <div className="absolute right-2 bottom-2">
+                <ReadMore/>
+              </div>
             </div>
           }
         </div>
