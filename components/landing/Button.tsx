@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 
-export default function Button(props:PropsWithChildren<{}>) {
+export default function Button(props:any) {
   return <button className="
     bg-blue-900
     rounded-md
@@ -11,7 +11,5 @@ export default function Button(props:PropsWithChildren<{}>) {
     text-white
     font-bold
     hover:bg-blue-800
-  ">
-      {props.children}
-  </button>
+  " {...props} />
 }
