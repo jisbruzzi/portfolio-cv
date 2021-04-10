@@ -13,6 +13,9 @@ module.exports = {
         merriweather:['Merriweather', ...defaultTheme.fontFamily.serif],
         montserrat:['Montserrat', ...defaultTheme.fontFamily.sans],
       },
+      dropShadow:{
+        strong:	"0 0 10px black"
+      },
       typography: (theme)=>({
         white: {
           css: {
