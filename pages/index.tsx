@@ -1,5 +1,6 @@
 import type { GrayMatterFile } from "gray-matter"
 import React, { PropsWithChildren } from "react"
+import Card from "../components/landing/Card"
 import ContentContainer from "../components/landing/ContentContainer"
 import Hero from "../components/landing/Hero"
 import PhotoAndInformation from "../components/landing/PhotoAndInformation"
@@ -50,13 +51,12 @@ function Curriculum({ person }: { person: GrayMatterFile<string> }) {
     m-4
     ">
       <div className="
-      bg-blue-900
-      rounded-xl
-      shadow-xl
       lg:min-h-almost-screen
       sticky top-8
       ">
-        <PhotoAndInformation data={person.data} />
+        <Card dark>
+          <PhotoAndInformation data={person.data} />
+        </Card>
       </div>
     </div>
     <div className="lg:w-2/3 lg:m-8 m-4">

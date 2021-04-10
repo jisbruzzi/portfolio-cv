@@ -7,7 +7,6 @@ export default function PhotoAndInformation({ data }: { data: { [key: string]: a
     justify-items-center
     items-center
     justify-center
-    p-4
     ">
     {
       data.name && <div className="
