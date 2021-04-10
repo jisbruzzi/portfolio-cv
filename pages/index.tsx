@@ -12,7 +12,11 @@ function DarkBlock({ text }: { text: GrayMatterFile<string> }) {
     <ContentContainer>
       {
         text.data.title &&
-        <h1 className="text-white text-center text-4xl font-montserrat m-4 font-extrabold filter drop-shadow-strong ">
+        <h1 className="
+        text-white text-center text-4xl 
+        font-montserrat m-4 font-extrabold 
+        filter drop-shadow-strong
+        ">
           {text.data.title}
         </h1>
       }
