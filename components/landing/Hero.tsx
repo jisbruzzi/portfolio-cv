@@ -1,3 +1,5 @@
+import Button from "./Button"
+
 export default function Hero({ data }: { data: { [key: string]: any } }) {
   return <div className="m-auto lg:min-h-almost-screen flex flex-col justify-center px-4 lg:py-0 py-8">
     <div className="m-auto">
@@ -11,21 +13,7 @@ export default function Hero({ data }: { data: { [key: string]: any } }) {
           {data.subtitle}
         </div>
       }
-
-      <button className="
-      bg-blue-900
-      rounded-md
-      shadow
-      font-sans
-      px-4
-      py-2
-      my-4
-      text-white
-      font-bold
-      hover:bg-blue-800
-      ">
-        Let's talk
-      </button>
+      <Button> Let's talk </Button>
     </div>
   </div>
 }
