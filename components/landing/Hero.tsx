@@ -13,7 +13,9 @@ export default function Hero({ data }: { data: { [key: string]: any } }) {
           {data.subtitle}
         </div>
       }
-      <Button> Let's talk </Button>
+      <div className="my-4">
+        <Button> Let's talk </Button>
+      </div>
     </div>
   </div>
 }

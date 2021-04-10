@@ -8,7 +8,6 @@ export default function Button(props:PropsWithChildren<{}>) {
     font-sans
     px-4
     py-2
-    my-4
     text-white
     font-bold
     hover:bg-blue-800
