@@ -78,8 +78,8 @@ function Portfolio(props:{portfolioItems:GrayMatterFile<string>[]}){
   return <div className="bg-blue-50">
     <ContentContainer>
       <SectionTitle> Portfolio </SectionTitle>
+      {props.portfolioItems.map(item=><PortfolioItem information={item}/>)}
     </ContentContainer>
-    {props.portfolioItems.map(item=><PortfolioItem information={item}/>)}
   </div>
 }
 export default function Homepage(props: HomeProps) {
