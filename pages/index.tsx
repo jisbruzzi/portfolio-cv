@@ -39,12 +39,15 @@ function DarkBlock({ text }: { text: GrayMatterFile<string> }) {
 }
 
 interface HomeProps {
-  jose: GrayMatterFile<string>,
+  jose: {
+    main:GrayMatterFile<string>,
+    detail:GrayMatterFile<string>,
+  },
   experience: GrayMatterFile<string>,
   portfolio: GrayMatterFile<string>[]
 }
 
-function Curriculum({ person }: { person: GrayMatterFile<string> }) {
+function Curriculum({ main, detail }: { main: GrayMatterFile<string>,detail: GrayMatterFile<string> }) {
   const [open, alternateOpen] = useReducer((s: boolean) => !s, false);
   return <div className="bg-blue-50">
     <div className="container mx-auto">
@@ -59,15 +62,15 @@ function Curriculum({ person }: { person: GrayMatterFile<string> }) {
       sticky top-8
       ">
             <Card dark>
-              <PhotoAndInformation data={person.data} />
+              <PhotoAndInformation data={main.data} />
             </Card>
           </div>
         </div>
         <div className="lg:w-2/3 lg:m-8 m-4 relative">
-          <Hero data={person.data} />
+          <Hero data={main.data} />
           <div
             className="prose mx-auto my-8 prose-compact prose-weaker"
-            dangerouslySetInnerHTML={{ __html: person.content }}
+            dangerouslySetInnerHTML={{ __html: main.content }}
           />
           <div className="absolute right-2">
             <div className="relative bottom-4">
@@ -79,7 +82,7 @@ function Curriculum({ person }: { person: GrayMatterFile<string> }) {
         overflow-hidden
         ${open ? "" : "h-0"}
         `}>
-            <div className="prose mx-auto my-8 prose-compact prose-weaker" dangerouslySetInnerHTML={{ __html: person.content }} />
+            <div className="prose mx-auto my-8 prose-compact prose-weaker" dangerouslySetInnerHTML={{ __html: detail.content }} />
           </div>
         </div>
       </div>
@@ -98,7 +101,7 @@ function Portfolio(props: { portfolioItems: GrayMatterFile<string>[] }) {
 export default function Homepage(props: HomeProps) {
   console.log(props)
   return <>
-    <Curriculum person={props.jose} />
+    <Curriculum main={props.jose.main} detail={props.jose.detail} />
     <DarkBlock text={props.experience} />
     <Portfolio portfolioItems={props.portfolio} />
   </>
@@ -117,7 +120,10 @@ export async function getStaticProps(): Promise<{ props: HomeProps }> {
 
   return {
     props: {
-      jose: (await htmlPart("jose.md")),
+      jose: {
+        main:(await htmlPart("jose.md")),
+        detail:(await htmlPart("jose.details.md")),
+      },
       experience: (await htmlPart("experience.md")),
       portfolio: await Promise.all(getPortfolioItems().map(name => htmlPart(`portfolio/${name}`)))
     },
