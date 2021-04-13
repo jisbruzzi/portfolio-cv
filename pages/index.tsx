@@ -108,6 +108,8 @@ export async function getStaticProps(): Promise<{ props: HomeProps }> {
       technologies:[
         { name:"python", knowledge:10 },
         { name:"javascript", knowledge:10 },
+        { name:"typescript", knowledge:10 },
+        { name:"electronjs", knowledge:7 },
         { name:"react", knowledge:9 },
         { name:"C#", knowledge:6 },
         { name:"java", knowledge:6 },
