@@ -1,10 +1,11 @@
 import type { GrayMatterFile } from "gray-matter"
-import React, { PropsWithChildren } from "react"
+import React, { PropsWithChildren, useReducer } from "react"
 import Card from "../components/landing/Card"
 import ContentContainer from "../components/landing/ContentContainer"
 import Hero from "../components/landing/Hero"
 import PhotoAndInformation from "../components/landing/PhotoAndInformation"
 import PortfolioItem from "../components/landing/PortfolioItem"
+import ReadMore from "../components/landing/ReadMoreButton"
 import { getBySlug, getPortfolioItems } from "../lib/landingParts"
 import markdownToHtml from "../lib/markdownToHtml"
 
@@ -44,6 +45,7 @@ interface HomeProps {
 }
 
 function Curriculum({ person }: { person: GrayMatterFile<string> }) {
+  const [open, alternateOpen] = useReducer((s: boolean) => !s, false);
   return <div className="bg-blue-50">
     <div className="container mx-auto">
       <div className="flex lg:flex-row flex-col align-middle">
@@ -61,12 +63,24 @@ function Curriculum({ person }: { person: GrayMatterFile<string> }) {
             </Card>
           </div>
         </div>
-        <div className="lg:w-2/3 lg:m-8 m-4">
+        <div className="lg:w-2/3 lg:m-8 m-4 relative">
           <Hero data={person.data} />
           <div
             className="prose mx-auto my-8 prose-compact prose-weaker"
             dangerouslySetInnerHTML={{ __html: person.content }}
           />
+          <div className="absolute right-2">
+            <div className="relative bottom-4">
+              <ReadMore open={open} onClick={alternateOpen} />
+            </div>
+          </div>
+          <div className={`
+        transition-height
+        overflow-hidden
+        ${open ? "" : "h-0"}
+        `}>
+            <div className="prose mx-auto my-8 prose-compact prose-weaker" dangerouslySetInnerHTML={{ __html: person.content }} />
+          </div>
         </div>
       </div>
     </div>
