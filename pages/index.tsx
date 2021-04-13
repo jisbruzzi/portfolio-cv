@@ -73,7 +73,7 @@ function Curriculum({ main, detail }: { main: GrayMatterFile<string>,detail: Gra
             dangerouslySetInnerHTML={{ __html: main.content }}
           />
           <div className="absolute right-2">
-            <div className="relative bottom-4">
+            <div className="relative lg:bottom-4 bottom-8">
               <ReadMore open={open} onClick={alternateOpen} />
             </div>
           </div>
