@@ -14,7 +14,9 @@ export default function Hero({ data }: { data: { [key: string]: any } }) {
         </div>
       }
       <div className="my-4">
-        <Button> Let's talk </Button>
+        <a href="mailto:jose.sbru@gmail.com">
+          <Button> Let's talk </Button>
+        </a>
       </div>
     </div>
   </div>
