@@ -76,6 +76,35 @@ function Tech(props: { technologies: Technology[] }) {
   </div>
 }
 
+function LetsTalkFooter(props: {}) {
+  return <div
+    className="bg-blue-900 text-white pb-60 pt-20">
+    <ContentContainer>
+
+      <div className="
+        text-center text-2xl 
+        m-4
+      ">
+        I can turn your idea into <span className="font-bold">reality</span>.
+      </div>
+      
+      <div className="
+        text-center text-8xl 
+        font-montserrat m-4 font-extrabold 
+        filter drop-shadow-strong
+      ">
+        Let's Talk
+      </div>
+      <div
+        className="text-center prose prose-white prose-compact max-w-none text-xl"
+      >
+        Send me an email to <a href="mailto:jose.sbru@gmail.com">jose.sbru@gmail.com</a>
+      </div>
+
+    </ContentContainer>
+  </div>
+}
+
 export default function Homepage(props: HomeProps) {
   console.log(props)
   return <>
@@ -83,6 +112,7 @@ export default function Homepage(props: HomeProps) {
     <DarkBlock text={props.experience} />
     <Portfolio portfolioItems={props.portfolio} />
     <Tech technologies={props.technologies} />
+    <LetsTalkFooter />
   </>
 }
 
