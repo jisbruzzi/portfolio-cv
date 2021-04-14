@@ -7,7 +7,7 @@ import Hero from "../components/landing/Hero"
 import PhotoAndInformation from "../components/landing/PhotoAndInformation"
 import PortfolioItem from "../components/landing/PortfolioItem"
 import ReadMore from "../components/landing/ReadMoreButton"
-import { getBySlug, getPortfolioItems } from "../lib/landingParts"
+import { getBySlug, getPortfolioItems, getTech } from "../lib/landingParts"
 import markdownToHtml from "../lib/markdownToHtml"
 
 function SectionTitle(props: PropsWithChildren<{}>) {
@@ -39,19 +39,19 @@ function DarkBlock({ text }: { text: GrayMatterFile<string> }) {
   </div>
 }
 
-interface Technology{
-  name:string,
-  knowledge:number,
+interface Technology {
+  name: string,
+  knowledge: number,
 }
 
 interface HomeProps {
   jose: {
-    main:GrayMatterFile<string>,
-    detail:GrayMatterFile<string>,
+    main: GrayMatterFile<string>,
+    detail: GrayMatterFile<string>,
   },
   experience: GrayMatterFile<string>,
   portfolio: GrayMatterFile<string>[],
-  technologies:Technology[]
+  technologies: Technology[]
 }
 
 function Portfolio(props: { portfolioItems: GrayMatterFile<string>[] }) {
@@ -68,7 +68,7 @@ function Tech(props: { technologies: Technology[] }) {
     <ContentContainer>
       <SectionTitle> Technologies </SectionTitle>
       <div className="flex flex-wrap justify-evenly">
-        {props.technologies.sort((a,b)=>b.knowledge-a.knowledge).map(tech => <div className="bg-white m-2 text-xl p-3 rounded-full shadow-xl">
+        {props.technologies.sort((a, b) => b.knowledge - a.knowledge).map(tech => <div className="bg-white m-2 text-xl p-3 rounded-full shadow-xl">
           {tech.name}
         </div>)}
       </div>
@@ -96,51 +96,30 @@ export async function getStaticProps(): Promise<{ props: HomeProps }> {
       orig: ""
     }
   }
+  function mapTechnologies(): Technology[] {
+    const tech = getTech();
+    if (tech instanceof Array) {
+      return tech.map((value) => {
+        if (value instanceof Array && typeof value[0] === "string" && typeof value[1] === "number") {
+          return {
+            name: value[0],
+            knowledge: value[1],
+          }
+        }
+      }).reduce<Technology[]>((acum, next) => next == undefined ? acum : [...acum, next], [])
+    }
+    return []
+  }
 
   return {
     props: {
       jose: {
-        main:(await htmlPart("jose.md")),
-        detail:(await htmlPart("jose.details.md")),
+        main: (await htmlPart("jose.md")),
+        detail: (await htmlPart("jose.details.md")),
       },
       experience: (await htmlPart("experience.md")),
       portfolio: await Promise.all(getPortfolioItems().map(name => htmlPart(`portfolio/${name}`))),
-      technologies:[
-        { name:"python", knowledge:10 },
-        { name:"javascript", knowledge:10 },
-        { name:"typescript", knowledge:10 },
-        { name:"electronjs", knowledge:7 },
-        { name:"react", knowledge:9 },
-        { name:"C#", knowledge:6 },
-        { name:"java", knowledge:6 },
-        { name:"SQL", knowledge:9 },
-        { name:"flask", knowledge:8 },
-        { name:"django", knowledge:6 },
-        { name:"nextjs", knowledge:8 },
-        { name:"vue", knowledge:7 },
-        { name:"ocaml", knowledge:4 },
-        { name:"lisp", knowledge:4 },
-        { name:"coq", knowledge:2 },
-        { name:"IIS", knowledge:2 },
-        { name:"terraform", knowledge:8 },
-        { name:"C", knowledge:6 },
-        { name:"C++", knowledge:4 },
-        { name:"nodeJS", knowledge:10 },
-        { name:"mongodb", knowledge:3 },
-        { name:"bash", knowledge:7 },
-        { name:"numpy", knowledge:5 },
-        { name:"bootstrap", knowledge:6 },
-        { name:"bulma", knowledge:6 },
-        { name:"webgl", knowledge:5 },
-        { name:"clojure", knowledge:4 },
-        { name:"tailwind", knowledge:7 },
-        { name:"GLSL", knowledge:2 },
-        { name:"Docker", knowledge:10 },
-        { name:"AWS", knowledge:7 },
-        { name:"Google cloud", knowledge:7 },
-        { name:"Quasar Framework", knowledge:9 },
-        { name:"Material UI", knowledge:7 },
-      ]
+      technologies: mapTechnologies()
     },
   }
 }

@@ -10,3 +10,7 @@ export function getBySlug(slug:string){
 export function getPortfolioItems(){
     return fs.readdirSync(join(landingDirectory,"portfolio"))
 }
+export function getTech():any{
+    const filePath = join(landingDirectory,"bubbles.json")
+    return JSON.parse(fs.readFileSync(filePath, 'utf8'))
+}
