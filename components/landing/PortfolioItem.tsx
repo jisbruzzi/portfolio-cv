@@ -37,9 +37,12 @@ export default function PortfolioItem({ information }: { information: GrayMatter
               </h1>
               <a className="hover:underline text-sm text-blue-900" href={information.data.website}>website</a>
               <div dangerouslySetInnerHTML={{ __html: information.data.excerpt }} />
-              <div className="absolute right-2 bottom-2">
-                <ReadMore open={open} onClick={alternateOpen}/>
-              </div>
+              {
+                (information.content.length>10) &&
+                <div className="absolute right-2 bottom-2">
+                  <ReadMore open={open} onClick={alternateOpen}/>
+                </div>
+              }
             </div>
           }
         </div>
