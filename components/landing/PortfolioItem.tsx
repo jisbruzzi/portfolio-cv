@@ -8,13 +8,14 @@ export default function PortfolioItem({ information }: { information: GrayMatter
   return <div className="my-8">
     <Card>
       <div className="p-4 relative">
-        <div className="flex flex-row h-40">
+        <div className="flex lg:flex-row flex-col lg:h-40">
           {
             information.data.cover && <>
               <img
                 src={"/next-blog"+information.data.cover}
                 className="
-                  w-1/3
+                  lg:w-1/3
+                  h-44
                   rounded-xl
                   shadow
                   border-blue-100
@@ -26,7 +27,7 @@ export default function PortfolioItem({ information }: { information: GrayMatter
             </>
           }
           {
-            information.data.title && <div className="p-4 w-2/3">
+            information.data.title && <div className="lg:p-4 pt-4 pb-12 lg:w-2/3">
               <h1 className="
                 text-2xl
                 font-montserrat
@@ -48,7 +49,7 @@ export default function PortfolioItem({ information }: { information: GrayMatter
       overflow-hidden
       ${open?"":"h-0"}
       `}>
-        <div className="prose prose-compact prose-weaker p-4" dangerouslySetInnerHTML={{ __html: information.content }} />
+        <div className="prose prose-compact prose-weaker p-4 text-justify pr-6" dangerouslySetInnerHTML={{ __html: information.content }} />
       </div>
     </Card>
   </div>
