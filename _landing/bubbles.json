@@ -32,5 +32,8 @@
     ["AWS", 7 ],
     ["Google cloud", 7 ],
     ["Quasar Framework", 9 ],
-    ["Material UI", 7 ]
+    ["Material UI", 7 ],
+    ["Gatsby", 8 ],
+    ["cypress", 10 ],
+    ["gitlab CI/CD", 10 ]
 ]
