@@ -7,7 +7,7 @@ import ReadMore from "./ReadMoreButton";
 
 export default function Curriculum({ main, detail }: { main: GrayMatterFile<string>, detail: GrayMatterFile<string> }) {
   const [open, alternateOpen] = useReducer((s: boolean) => !s, false);
-  return <div className="bg-blue-50">
+  return <div className="bg-blue-50 pb-8">
     <div className="container mx-auto">
       <div className="flex lg:flex-row flex-col align-middle">
         <div className="
