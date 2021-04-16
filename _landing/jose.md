@@ -1,6 +1,6 @@
 ---
 name: José Ignacio Sbruzzi
-photo: 'https://jisbruzzi.github.io/cv/fotocv.png'
+photo: '/photo.png'
 title: Software engineer
 subtitle: Looking for work
 ---

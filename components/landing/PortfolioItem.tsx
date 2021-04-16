@@ -12,7 +12,7 @@ export default function PortfolioItem({ information }: { information: GrayMatter
           {
             information.data.cover && <>
               <img
-                src={"/next-blog"+information.data.cover}
+                src={information.data.cover}
                 className="
                   sm:w-1/3
                   xs:h-44

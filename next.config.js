@@ -1,7 +1,7 @@
 module.exports = {
-    basePath: '/next-blog',
+    basePath: '',
     publicRuntimeConfig: {
         // Will be available on both server and client
-        staticFolder: '/next-blog',
+        staticFolder: '',
     },
 }
