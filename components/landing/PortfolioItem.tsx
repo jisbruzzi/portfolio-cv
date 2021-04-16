@@ -28,13 +28,13 @@ export default function PortfolioItem({ information }: { information: GrayMatter
           }
           {
             information.data.title && <div className="sm:p-4 pt-4 pb-12 sm:w-2/3">
-              <h1 className="
+              <h3 className="
                 text-2xl
                 font-montserrat
                 font-bold
                 ">
                 {information.data.title}
-              </h1>
+              </h3>
               <a className="hover:underline text-sm text-blue-900" href={information.data.website}>website</a>
               <div dangerouslySetInnerHTML={{ __html: information.data.excerpt }} />
               {

@@ -11,13 +11,13 @@ import { getBySlug, getPortfolioItems, getTech } from "../lib/landingParts"
 import markdownToHtml from "../lib/markdownToHtml"
 
 function SectionTitle(props: PropsWithChildren<{}>) {
-  return <h1 className="
+  return <h2 className="
   text-center text-4xl 
   font-montserrat m-4 font-extrabold 
   pb-8
   ">
     {props.children}
-  </h1>
+  </h2>
 }
 
 function DarkBlock({ text }: { text: GrayMatterFile<string> }) {
