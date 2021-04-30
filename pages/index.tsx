@@ -23,7 +23,7 @@ function SectionTitle(props: PropsWithChildren<{}>) {
 
 function DarkBlock({ text }: { text: GrayMatterFile<string> }) {
   return <div
-    className="bg-blue-900 text-white p-8 print:py-0">
+    className="bg-blue-900 text-white md:p-8 p-4 print:py-0">
     <ContentContainer>
       {
         text.data.title &&
@@ -57,7 +57,7 @@ interface HomeProps {
 }
 
 function Portfolio(props: { portfolioItems: GrayMatterFile<string>[] }) {
-  return <div className="bg-blue-50 p-8">
+  return <div className="bg-blue-50 md:p-8 p-4 print:py-0">
     <ContentContainer>
       <SectionTitle> Portfolio </SectionTitle>
       {props.portfolioItems.map(item => <PortfolioItem information={item} />)}
@@ -66,7 +66,7 @@ function Portfolio(props: { portfolioItems: GrayMatterFile<string>[] }) {
 }
 
 function Tech(props: { technologies: Technology[] }) {
-  return <div className="bg-blue-50 p-8">
+  return <div className="bg-blue-50 md:p-8 p-4 print:py-0">
     <ContentContainer>
       <SectionTitle> Technologies </SectionTitle>
       <div className="flex flex-wrap justify-evenly">
