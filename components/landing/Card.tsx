@@ -5,6 +5,8 @@ export default function Card(props: PropsWithChildren<{dark?:boolean}>) {
   ${props.dark?"bg-blue-900":"bg-white"}
   rounded-xl
   shadow-xl
+  print:border-blue-900
+  print:border-2
   `}>
     {props.children}
   </div>

@@ -38,7 +38,7 @@ module.exports = {
         },
         "super-compact": {
           css: {
-            'p, li, h1, h2, h3, h4, h5': { marginBottom:"0.1em", marginTop: "0.1em", lineHeight:"1.2em"},
+            'p, li, h1, h2, h3, h4, h5, ul': { marginBottom:"0.1em", marginTop: "0.1em", lineHeight:"1.2em"},
             h1: { fontSize:"1.5em"},
             h2: { fontSize:"1.25em", marginLeft:"1rem"},
             li: { marginLeft:"2rem"},

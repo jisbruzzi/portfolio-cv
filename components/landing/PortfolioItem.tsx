@@ -39,7 +39,7 @@ export default function PortfolioItem({ information }: { information: GrayMatter
               <div dangerouslySetInnerHTML={{ __html: information.data.excerpt }} />
               {
                 (information.content.length>10) &&
-                <div className="absolute right-2 bottom-2">
+                <div className="absolute right-2 bottom-2 print:hidden">
                   <ReadMore open={open} onClick={alternateOpen}/>
                 </div>
               }

@@ -14,7 +14,8 @@ function SectionTitle(props: PropsWithChildren<{}>) {
   return <h2 className="
   text-center text-4xl 
   font-montserrat m-4 font-extrabold 
-  pb-8
+  pb-8 print:pb-0
+  print:my-0
   ">
     {props.children}
   </h2>
@@ -22,18 +23,18 @@ function SectionTitle(props: PropsWithChildren<{}>) {
 
 function DarkBlock({ text }: { text: GrayMatterFile<string> }) {
   return <div
-    className="bg-blue-900 text-white p-8">
+    className="bg-blue-900 text-white p-8 print:py-0">
     <ContentContainer>
       {
         text.data.title &&
         <SectionTitle>
-          <span className="filter drop-shadow-strong">
+          <span className="filter print:drop-shadow-none drop-shadow-strong">
             {text.data.title}
           </span>
         </SectionTitle>
       }
       <div
-        className="prose prose-white prose-compact max-w-none"
+        className="prose prose-white prose-compact max-w-none print:prose-super-compact"
         dangerouslySetInnerHTML={{ __html: text.content }}
       />
     </ContentContainer>
