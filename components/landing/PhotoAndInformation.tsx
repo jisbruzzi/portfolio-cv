@@ -8,9 +8,11 @@ export default function PhotoAndInformation({ data }: { data: { [key: string]: a
     items-center
     justify-center
     p-4
+    print:p-0
     ">
+    <div>
     {
-      data.name && <div className="
+        data.name && <div className="
         text-white
         lg:text-6xl
         text-3xl
@@ -20,9 +22,24 @@ export default function PhotoAndInformation({ data }: { data: { [key: string]: a
         lg:m-4
         font-bold
         ">
-        {data.name}
-      </div>
-    }
+          {data.name}
+        </div>
+      }
+      {
+        data.title && <div className="
+        text-red-50
+        hidden
+        print:block
+        rounded-full
+        font-montserrat
+        text-left
+        lg:m-4
+        font-bold
+        ">
+          {data.title}
+        </div>
+      }
+    </div>
 
     {
       (typeof data.photo === "string") &&
@@ -31,6 +48,7 @@ export default function PhotoAndInformation({ data }: { data: { [key: string]: a
           rounded-full
           lg:w-2/3
           w-1/3
+          print:w-20
           max-w-xs
           border-blue-100
           border-solid
