@@ -28,7 +28,7 @@ export default function Curriculum({ main, detail }: { main: GrayMatterFile<stri
         <div className="lg:w-2/3 lg:m-8 m-4 relative print:m-1">
           <Hero data={main.data} />
           <div
-            className="prose mx-auto my-8 prose-compact prose-weaker print:my-2"
+            className="prose mx-auto my-8 prose-compact prose-weaker print:my-2 print:prose-super-compact"
             dangerouslySetInnerHTML={{ __html: main.content }}
           />
           <div className="absolute right-2">
@@ -41,7 +41,7 @@ export default function Curriculum({ main, detail }: { main: GrayMatterFile<stri
           overflow-hidden
           ${open ? "" : "h-0"}
           `}>
-            <div className="prose mx-auto my-8 prose-compact prose-weaker" dangerouslySetInnerHTML={{ __html: detail.content }} />
+            <div className="prose mx-auto my-8 prose-compact prose-weaker print:prose-super-compact" dangerouslySetInnerHTML={{ __html: detail.content }} />
           </div>
         </div>
       </div>
