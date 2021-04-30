@@ -14,6 +14,7 @@ export default function Curriculum({ main, detail }: { main: GrayMatterFile<stri
       lg:w-1/3
       lg:m-8
       m-4
+      print:m-1
       ">
           <div className="
         lg:min-h-almost-screen
@@ -24,10 +25,10 @@ export default function Curriculum({ main, detail }: { main: GrayMatterFile<stri
             </Card>
           </div>
         </div>
-        <div className="lg:w-2/3 lg:m-8 m-4 relative">
+        <div className="lg:w-2/3 lg:m-8 m-4 relative print:m-1">
           <Hero data={main.data} />
           <div
-            className="prose mx-auto my-8 prose-compact prose-weaker"
+            className="prose mx-auto my-8 prose-compact prose-weaker print:my-2"
             dangerouslySetInnerHTML={{ __html: main.content }}
           />
           <div className="absolute right-2">
