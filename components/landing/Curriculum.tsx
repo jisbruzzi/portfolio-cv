@@ -28,7 +28,7 @@ export default function Curriculum({ main, detail }: { main: GrayMatterFile<stri
         <div className="lg:w-2/3 lg:m-8 m-4 relative print:m-1">
           <Hero data={main.data} />
           <div
-            className="prose mx-auto my-8 prose-compact prose-weaker print:my-2 print:prose-super-compact prose-bluetitles"
+            className="prose mx-auto my-8 prose-compact notprint:prose-weaker print:my-2 print:prose-super-compact print:prose-bluedots"
             dangerouslySetInnerHTML={{ __html: main.content }}
           />
           <div className="absolute right-2 print:hidden">
@@ -42,7 +42,7 @@ export default function Curriculum({ main, detail }: { main: GrayMatterFile<stri
           ${open ? "" : "h-0"}
           print:h-auto
           `}>
-            <div className="prose mx-auto my-8 print:my-1 prose-compact prose-bluetitles prose-weaker print:prose-super-compact " dangerouslySetInnerHTML={{ __html: detail.content }} />
+            <div className="prose mx-auto my-8 print:my-1 prose-compact prose-bluetitles notprint:prose-weaker print:prose-super-compact print:prose-bluedots" dangerouslySetInnerHTML={{ __html: detail.content }} />
           </div>
         </div>
       </div>

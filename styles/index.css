@@ -12,6 +12,12 @@
 
 /* Start purging... */
 @tailwind utilities;
+
+@layer utilities {
+    .avoid-break-inside{
+        break-inside: avoid;
+    }
+}
 /* Stop purging. */
 
 /* Your own custom utilities */

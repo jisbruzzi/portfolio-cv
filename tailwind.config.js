@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       screens: {
         'print': {'raw': 'print'},
+        'notprint': {'raw': 'not print'},
       },
       minHeight:{
         "almost-screen":"60vh"
@@ -50,6 +51,15 @@ module.exports = {
             'strong, h1, h2, h3, h4, h5': { color: theme('colors.gray.600', defaultTheme.colors.gray[600]) },
           },
         },
+        bluedots:{
+          css:{
+            'ul > li::before':{
+              backgroundColor: theme('colors.blue.900', defaultTheme.colors.blue[900]),
+              borderColor: theme('colors.blue.900', defaultTheme.colors.blue[900]),
+              borderWidth:"0.2em"
+            }
+          }
+        }
       }),
     },
     

@@ -34,7 +34,7 @@ function DarkBlock({ text }: { text: GrayMatterFile<string> }) {
         </SectionTitle>
       }
       <div
-        className="prose prose-white prose-compact max-w-none print:prose-super-compact"
+        className="prose prose-white prose-compact max-w-none print:prose-super-compact print:prose-bluedots"
         dangerouslySetInnerHTML={{ __html: text.content }}
       />
     </ContentContainer>
@@ -66,11 +66,22 @@ function Portfolio(props: { portfolioItems: GrayMatterFile<string>[] }) {
 }
 
 function Tech(props: { technologies: Technology[] }) {
-  return <div className="bg-blue-50 md:p-8 p-4 print:py-0">
+  return <div className="bg-blue-50 md:p-8 p-4 print:py-0 avoid-break-inside">
     <ContentContainer>
       <SectionTitle> Technologies </SectionTitle>
       <div className="flex flex-wrap justify-evenly">
-        {props.technologies.sort((a, b) => b.knowledge - a.knowledge).map(tech => <div className="bg-white m-2 text-xl p-3 rounded-full shadow-xl">
+        {props.technologies.sort((a, b) => b.knowledge - a.knowledge).map(tech => <div 
+          className="
+          bg-white 
+          m-2 print:m-1
+          text-xl print:text-base
+          p-3 print:p-1
+          rounded-full 
+          shadow-xl print:shadow-none
+          print:border-2
+          print:border-gray-100
+          "
+        >
           {tech.name}
         </div>)}
       </div>
@@ -80,7 +91,7 @@ function Tech(props: { technologies: Technology[] }) {
 
 function LetsTalkFooter(props: {}) {
   return <div
-    className="bg-blue-900 text-white pb-60 pt-20">
+    className="bg-blue-900 text-white pb-60 pt-20 print:hidden">
     <ContentContainer>
 
       <div className="

@@ -52,7 +52,7 @@ export default function PortfolioItem({ information }: { information: GrayMatter
       overflow-hidden
       ${open?"":"h-0"}
       `}>
-        <div className="prose prose-compact prose-weaker p-4 text-justify pr-6" dangerouslySetInnerHTML={{ __html: information.content }} />
+        <div className="prose prose-compact notprint:prose-weaker p-4 text-justify pr-6" dangerouslySetInnerHTML={{ __html: information.content }} />
       </div>
     </Card>
   </div>
