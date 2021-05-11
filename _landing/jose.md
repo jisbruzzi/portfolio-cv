@@ -2,7 +2,7 @@
 name: José Ignacio Sbruzzi
 photo: '/photo.png'
 title: Software engineer
-subtitle: Looking for work
+subtitle: Open to work
 ---
 # Location
 Buenos Aires, Argentina, GMT-3
@@ -11,7 +11,7 @@ Buenos Aires, Argentina, GMT-3
 Spanish, Portuguese, English
 
 # Education
-## UBA: Information Systems Engineering (2014-now)
+## UBA: Information Systems Engineering (2014 - may 5, 2021)
 - Specialization: **management**. Includes topics such as software engineering, project management and software development process methodologies
 - **GPA: 8.50**
 - I am going to receive my degree in **2021**
